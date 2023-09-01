@@ -1,0 +1,23 @@
+version: '3.3'
+
+services:
+
+  app:
+    image: machines/filestash
+    container_name: filestash
+    restart: unless-stopped
+    environment:
+      - APPLICATION_URL=
+      - GDRIVE_CLIENT_ID=<gdrive_client>
+      - GDRIVE_CLIENT_SECRET=<gdrive_secret>
+      - DROPBOX_CLIENT_ID=<dropbox_key>
+      - ONLYOFFICE_URL=http://onlyoffice
+    ports:
+      - "8334:8334"
+
+  onlyoffice:
+    image: onlyoffice/documentserver
+    container_name: filestash_oods    
+    restart: unless-stopped
+    security_opt:
+      - seccomp:unconfined      
