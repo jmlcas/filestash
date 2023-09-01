@@ -3,7 +3,7 @@ version: '3.3'
 services:
 
   app:
-    image: machines/filestash
+    image: machines/filestash:latest
     container_name: filestash
     restart: unless-stopped
     environment:
@@ -16,8 +16,8 @@ services:
       - "8334:8334"
 
   onlyoffice:
-    image: onlyoffice/documentserver
-    container_name: filestash_oods    
+    image: onlyoffice/documentserver:latest
+    container_name: filestash_only    
     restart: unless-stopped
     security_opt:
       - seccomp:unconfined      
