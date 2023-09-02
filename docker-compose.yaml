@@ -13,9 +13,7 @@ services:
       - DROPBOX_CLIENT_ID=<dropbox_key>
       - ONLYOFFICE_URL=http://onlyoffice
     ports:
-      - "8334:8334"
-    volumes:
-      - ./filestash:/app/data/state      
+      - "8334:8334"    
 
   onlyoffice:
     image: onlyoffice/documentserver:latest
